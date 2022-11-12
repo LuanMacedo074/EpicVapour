@@ -16,7 +16,7 @@
                 <li><a href="javascript:void(0)">Jogos</a></li>
                 <li><a href="javascript:void(0)">Contato</a></li>
                 <li style="float:right"><a href="registro.php">Registro</a></li>
-                <li style="float:right"><a href="javascript:void(0)">Entrar</a></li>
+                <li style="float:right"><a href="login.php">Entrar</a></li>
 
             </ul>
         <div class="navbar">

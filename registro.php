@@ -10,8 +10,8 @@
     <script src="js/validate.js"></script>
 </head>
 <body>
-    <nav>
-        <div class="navbar">
+    <div class="navbar">
+        <nav>
             <ul>
                 <li><a href="index.php" >Home</a></li>
                 <li><a href="javascript:void(0)">Comunidade</a></li>
@@ -20,18 +20,18 @@
                 <li style="float:right"><a href="registro.php" class="active">Registro</a></li>
                 <li style="float:right"><a href="javascript:void(0)">Entrar</a></li>
             </ul>
-        </div>
+        </nav>  
+    </div>
 
-        <div class="registerform">
-            <form action="addregistro.php" method="post" onsubmit="return validateForm();">
-                <ul>
-                    <li><input type="text" placeholder="examplo@dominio.com" id = "email" name="email"> <input type="text" placeholder="Confirma Email" id="confirmemail" name="confirmemail"></li>
-                    <li><input type="text" placeholder="Usuario" id="username" name="username"></li>
-                    <li><input type="password" placeholder="Senha" id="password"name="password"> <input type="password" id="confirmpassword"name="confirmpassword "placeholder="Confirma Senha"></li>
-                    <li> <button class="btn1" type="submit">Enviar</button></li>
-                </ul>
-            </form>
-        </div>
-    </nav>
+    <div class="registerform">
+        <form action="addregistro.php" method="post" onsubmit="return validateForm();">
+            <ul>
+                <li><input type="text" placeholder="examplo@dominio.com" id = "email" name="email"> <input type="text" placeholder="Confirma Email" id="confirmemail" name="confirmemail"></li>
+                <li><input type="text" placeholder="Usuario" id="username" name="username"></li>
+                <li><input type="password" placeholder="Senha" id="password"name="password"> <input type="password" id="confirmpassword"name="confirmpassword "placeholder="Confirma Senha"></li>
+                <li> <button class="btn1" type="submit">Enviar</button></li>
+            </ul>
+        </form>
+    </div>
 </body>
 </html>

@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <nav>
-        <div class="navbar">
+
+    <div class="navbar">
+        <nav>
             <ul>
                 <li><a href="index.php" >Home</a></li>
                 <li><a href="javascript:void(0)">Comunidade</a></li>
@@ -18,7 +19,18 @@
                 <li style="float:right"><a href="registro.php">Registro</a></li>
                 <li style="float:right"><a href="javascript:void(0)" class="active">Entrar</a></li>
             </ul>
-        <div class="navbar">
-    </nav>
+        </nav>
+    </div>
+    <div class="loginform">
+        <form action="createsession.php" method="post" onsubmit="return ValidateLogin()">
+
+
+
+        </form>
+
+
+
+    </div>
+
 </body>
 </html>
