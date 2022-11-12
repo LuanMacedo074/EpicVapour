@@ -16,10 +16,11 @@ class DB extends PDO
 
     $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
 
+
     parent::__construct($dsn, $user, $password);
 
 
     $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
+    }
 }
 ?>

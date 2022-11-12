@@ -17,18 +17,18 @@
                 <li><a href="javascript:void(0)">Comunidade</a></li>
                 <li><a href="javascript:void(0)">Jogos</a></li>
                 <li><a href="javascript:void(0)">Contato</a></li>
-                <li style="float:right"><a href="registro.php">Entrar</a></li>
-                <li style="float:right"><a href="registro.php" class ="active" >Registro</a></li>
+                <li style="float:right"><a href="registro.php" class="active">Registro</a></li>
+                <li style="float:right"><a href="javascript:void(0)">Entrar</a></li>
             </ul>
         </div>
 
         <div class="registerform">
-            <form action="addregistro.php" method="post">
+            <form action="addregistro.php" method="post" onsubmit="return validateForm();">
                 <ul>
-                    <li><input type="text" placeholder="examplo@dominio.com" name="email"> <input type="text" placeholder="Confirma Email" name="confirmemail"></li>
-                    <li><input type="text" placeholder="Usuario"name="username"></li>
-                    <li><input type="password" placeholder="Senha" name="password"> <input type="password" placeholder="Confirma Senha"></li>
-                    <li> <button type="submit">Enviar</button></li>
+                    <li><input type="text" placeholder="examplo@dominio.com" id = "email" name="email"> <input type="text" placeholder="Confirma Email" id="confirmemail" name="confirmemail"></li>
+                    <li><input type="text" placeholder="Usuario" id="username" name="username"></li>
+                    <li><input type="password" placeholder="Senha" id="password"name="password"> <input type="password" id="confirmpassword"name="confirmpassword "placeholder="Confirma Senha"></li>
+                    <li> <button class="btn1" type="submit">Enviar</button></li>
                 </ul>
             </form>
         </div>
