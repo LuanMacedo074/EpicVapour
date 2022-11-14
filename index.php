@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +16,22 @@
                 <li><a href="javascript:void(0)">Comunidade</a></li>
                 <li><a href="javascript:void(0)">Jogos</a></li>
                 <li><a href="javascript:void(0)">Contato</a></li>
+                <?php 
+                if (!$_SESSION){ echo <<<TXT
                 <li style="float:right"><a href="registro.php">Registro</a></li>
                 <li style="float:right"><a href="login.php">Entrar</a></li>
-
+                TXT;
+                }
+                else{
+                $data = $_SESSION["userdata"];
+                $username = $data["nomeUsuario"];
+                $saldo = $data["saldo"];
+                echo <<<TXT
+                <li style="float:right"><a href="javascript:void(0)">$username</a></li>
+                <li style="float:right"><a href="javascript:void(0)">$saldo</a></li>
+                TXT;
+                }?>
+                
             </ul>
         <div class="navbar">
     </nav>

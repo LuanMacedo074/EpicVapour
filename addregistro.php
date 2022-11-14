@@ -1,6 +1,7 @@
 <?php
 
     require './db.php';
+    require_once './check.php';
 
     function create_user_id($database){
         $rows = $database->exec("SELECT COUNT(*) FROM public.usuario");
@@ -40,7 +41,7 @@
 
     function send_activation_email($email, $activation_code){
     $activation_link = "http://localhost/projetounidadeiii/EpicVapour/ativarconta.php?email=$email&activation_code=$activation_code";
-    var_dump($activation_link); 
+    echo "<a href='$activation_link'>Ativar</a>"; 
     }
 
 
@@ -60,5 +61,3 @@
     send_activation_email($user[0], $code);
 
     $db = null;
-    
-?>

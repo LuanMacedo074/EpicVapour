@@ -1,5 +1,7 @@
 <?php 
 
+require_once './check.php';
+
 class DB extends PDO
 {
     public function __construct()
@@ -23,4 +25,3 @@ class DB extends PDO
     $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 }
-?>

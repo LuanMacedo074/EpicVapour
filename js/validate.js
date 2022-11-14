@@ -1,17 +1,17 @@
-$(document).ready(function() {
-  $(".btn1").click( function(){
-    passwordValue("password")
-
-    
-  })
-});
-
+function isEmail(campo1){ 
+  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  var email = document.getElementById(campo1).value;
+  if (email.match(validRegex)){
+    return true;
+  } else{
+    return false;
+  }
+}
 
 function validateEmail(campo1, campo2) {
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     var email = document.getElementById(campo1).value;
     var confirmemail = document.getElementById(campo2).value;
-    if (email.match(validRegex) && email == confirmemail) {
+    if (isEmail(email) && email == confirmemail) {
       return true;
     } else {
       return false;
@@ -52,6 +52,24 @@ function validateForm() {
   if (validatePassword(pass, pass2) && validateEmail(email, email2) && passwordValue(pass)){
     return true
   } else{ 
+    return false
+  }
+}
+
+function validateLogin(){
+  var email = document.getElementById("email").value;
+
+  if (isEmail(email) && passwordValue("password")){
+    return true
+  } else{
+    return false
+  }
+}
+
+function validateRecovery(){
+  if (passwordValue('password') && passwordValue('oldpassword') && validatePassword('password', 'confirmpassword')){
+    return true
+  } else{
     return false
   }
 }
