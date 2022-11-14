@@ -3,8 +3,9 @@
 require_once './db.php';
 require_once './getuserdata.php';
 require_once './check.php';
+
 session_start();
-session_unset();
+
 
 $db = new DB();
 
@@ -27,4 +28,4 @@ if ($oldpassword == $password){
 }
 
 $db = null;
-die(header("Location: ./resetarsenha.php"));
+die(header("Location: ./resetarsenha.php?email=$email"));

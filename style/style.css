@@ -4,6 +4,20 @@
 
 }
 
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+.navbar li p{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
 .navbar ul {
   list-style-type: none;
   margin: 0;
@@ -32,4 +46,11 @@
 
 .navbar .active {
   background-color: #04AA6D;
+}
+
+.navbar .dropbtn {
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
 }

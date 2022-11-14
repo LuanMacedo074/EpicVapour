@@ -1,4 +1,8 @@
-<?php session_start()?>
+<?php session_start();
+require './islogged.php';
+
+if (check_is_logged() == true){
+    die(http_response_code(403));}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -2,6 +2,8 @@
 require_once './check.php';
 require_once './db.php';
 require_once 'getuserdata.php';
+require './islogged.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,53 +32,23 @@ require_once 'getuserdata.php';
     </div>
     <?php 
     $db = new DB();
-    if (isset($_GET['email'])){
-        $data = get_user_data($db, $_GET['email']);
-    if ($data && password_verify($_GET['recovery_code'], $data['recovery_code'])){
-    ?>
-        <div class="loginform">
-            <form action="registernewpassword.php?email=<?php echo $_GET['email']?>" method="post" onsubmit="return validateRecovery();">
-                <ul>
-                    <li><input type="password" placeholder="Senha antiga" id="oldpassword" name="oldpassword">
-                    <li><input type="password" placeholder="Senha nova" id="password" name="password"></li>
-                    <li><input type="password" id="confirmpassword" name="confirmpassword "placeholder="Confirma Senha"></li>
-                    <li><button class="btn4" type="submit">RESETAR</button></li>
-                </ul>      
-            </form>
-        </div>
-    <?php 
-    } else{
-    ?>
-           <div class="loginform">
-            <form action="registernewpassword.php?email=<?php echo $_GET['email']?>" method="post" onsubmit="return validateRecovery();">
-                <ul>
-                    <li><input type="password" placeholder="Senha antiga" id="oldpassword" name="oldpassword">
-                    <li><input type="password" placeholder="Senha nova" id="password" name="password"></li>
-                    <li><input type="password" id="confirmpassword" name="confirmpassword "placeholder="Confirma Senha"></li>
-                    <li><button class="btn4" type="submit">RESETAR</button></li>
-                </ul>      
-            </form>
-        </div>
-        <p>Ocorreu um erro ao validar sua conta</p>
-    <?php
-    }}
-    $db = null;
-    ?>
 
-    <?php
-    if (!$_SESSION){
+    if (!$_SESSION && isset($_GET['email']) && isset($_GET['recovery_code'])){ 
+        require_once 'loginform.php';
     }
-    else{
+    else if (count($_SESSION) > 0){
         if ($_SESSION['errcode'] == 1){
         session_unset();
+        require_once 'loginform.php';
     ?>
         <p>A nova senha não pode ser igual a senha anterior</p>
     <?php
         }
         else if ($_SESSION['errcode'] == 2){
         session_unset();
+        require_once 'loginform.php';
     ?>
-        <p>A senha anterior não coincide.</p>
+        <p>A senha antiga não coincide.</p>
     <?php
         }
     else if ($_SESSION['errcode'] == 0){
@@ -85,6 +57,11 @@ require_once 'getuserdata.php';
         <p>Senha redefinida com sucesso!</p>
     <?php 
         }
-    }?>
+    }
+    else if (isset($_GET['email']) && ! isset($_GET['recovery_code'])){
+        echo "<p>Houve um problema com sua solicitação</p>";
+    }
+    $db = null
+    ?>
 </body>
 </html>

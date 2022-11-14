@@ -5,7 +5,6 @@ $(document).ready(function() {
             window.alert("Insira um email valido!")
         }
     })
-  });
 
   function alertEmail(campo1){
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -14,3 +13,4 @@ $(document).ready(function() {
     return email.match(validRegex) 
   
   }
+})

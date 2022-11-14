@@ -26,14 +26,14 @@
                 $data = $_SESSION["userdata"];
                 $username = $data["nomeUsuario"];
                 $saldo = $data["saldo"];
-                echo <<<TXT
-                <li style="float:right"><a href="javascript:void(0)">$username</a></li>
-                <li style="float:right"><a href="javascript:void(0)">$saldo</a></li>
-                TXT;
+                ?>
+                <li style="float:right"><a href="javascript:void(0)"><?php echo strtoupper($username)?></a></li>
+                <li style="float:right"><a href="javascript:void(0)"><?php echo "R$: $saldo" ?></a></li>    
+                <?php
                 }?>
-                
             </ul>
         <div class="navbar">
     </nav>
+    <a href="logout.php">LOGOUT</a>
 </body>
 </html>
