@@ -11,34 +11,31 @@ if (check_is_logged() == true){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENTRAR</title>
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/validate.js"></script>
+    <?php require './fonts'?>
 </head>
-<body>
-
-    <div class="navbar">
-        <nav>
-            <ul>
-                <li><a href="index.php" >Home</a></li>
-                <li><a href="javascript:void(0)">Comunidade</a></li>
-                <li><a href="javascript:void(0)">Jogos</a></li>
-                <li><a href="javascript:void(0)">Contato</a></li>
-                <li style="float:right"><a href="registro.php">Registro</a></li>
-                <li style="float:right"><a href="javascript:void(0)" class="active">Entrar</a></li>
-            </ul>
-        </nav>
-    </div>
+<body class="loginpage">
+    <?php require 'navbar.php'?>
     <div class="loginform">
         <form action="createsession.php" method="post" onsubmit="return validateLogin();">
             <ul>
-                <li><input type="text" placeholder="Email" id="email" name="email"></li>
-                <li><input type="password" placeholder="Senha" id="password"name="password"></li>
-                <li><button class="btn1" type="submit">ENTRAR</button> <a href="recuperarsenha.php">ESQUECEU SUA SENHA?</a></li>
+                <li><img id="loginico" src="siteimages/loginicon.png"> <br</li>
+                <li><label class = "headertext">SIGN IN</label> <br></li>
+                <li><input type="text" placeholder="Email" id="email" class="entrybox" name="email"></li>
+                <li><input type="password" placeholder="Senha" id="password"class="entrybox" name="password"></li>
+                <li class="checkbox"><input type="checkbox" name="mantersessao">
+                    <span class="checkmark">Manter conectado</span></li><br>
+                <li><button class="submitbuttons" id="btn1" type="submit">ENTRAR</button></li>
                 <?php if (array_key_exists("err", $_SESSION)){
                     echo "<li><p> O USUÁRIO NÃO EXISTE</p></li>";
                     session_unset();}?>
             </ul>       
         </form>
+    </div>
+    <div class="esqueceubox">
+        <a class="textesqueceu" href="registro.php">ESQUECEU SUA SENHA ?</a>
     </div>
 </body>
 </html>

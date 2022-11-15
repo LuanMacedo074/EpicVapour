@@ -12,22 +12,11 @@ if (check_is_logged() == true){
     <title>REGISTRO</title>
     <link rel="stylesheet" href="./style/style.css">
     <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <script src="js/validate.js"></script>
 </head>
 <body>
-    <div class="navbar">
-        <nav>
-            <ul>
-                <li><a href="index.php" >Home</a></li>
-                <li><a href="javascript:void(0)">Comunidade</a></li>
-                <li><a href="javascript:void(0)">Jogos</a></li>
-                <li><a href="javascript:void(0)">Contato</a></li>
-                <li style="float:right"><a href="registro.php" class="active">Registro</a></li>
-                <li style="float:right"><a href="login.php">Entrar</a></li>
-            </ul>
-        </nav>  
-    </div>
-
+    <?php require 'navbar.php'?>
     <div class="registerform">
         <form action="addregistro.php" method="post" onsubmit="return validateForm();">
             <ul>

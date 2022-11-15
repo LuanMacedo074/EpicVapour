@@ -4,15 +4,6 @@ require './db.php';
 require_once './check.php';
 require_once './getuserdata.php';
 
-function get_user_data($db, $email){
-    $sql = file_get_contents("./sql/getuserdata.sql");
-
-    $stmt = $db->prepare($sql);
-    $stmt->execute([$email]);
-    $userdata = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    return $userdata;
-}
 function check_expiration_time($expiration_time){
     $tempo = DateTime::createFromFormat("Y-m-d H:i:s", gmdate("Y-m-d H:i:s"));
     $expiration = DateTime::createFromFormat("Y-m-d H:i:s", $expiration_time);

@@ -4,53 +4,173 @@
 
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: white;
+  }
+
+
+/* ESTILO DA NAVBAR COMEÇO */
 .navbar {
+  height:73px; 
+  max-height:73px;
+  width: 100%; 
+  display: inline-block;
   overflow: hidden;
-  background-color: #333;
-  font-family: Arial;
+  font-family: 'Oswald', sans-serif;
+}
+
+.navbar .nav{
+  display:block;
 }
 
 .navbar li p{
   display: block;
-  color: white;
+  color: gray;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 .navbar ul {
+  display: block;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #262626;
   position: sticky;
   top: 0;
 }
 
 .navbar li {
+  padding: 10px;
   float: left;
 }
 
 .navbar li a {
+  font-size: 20px;
   display: block;
-  color: white;
+  color: gray;
   text-align: center;
-  padding: 14px 16px;
+  padding: 5px 2px;
   text-decoration: none;
 }
 
 .navbar li a:hover {
-  background-color: #111;
-}
-
-.navbar .active {
-  background-color: #04AA6D;
-}
-
-.navbar .dropbtn {
-  background-color: #333;
   color: white;
-  border: none;
-  cursor: pointer;
 }
+
+#logo{
+    width: 50px;
+}
+
+/* ESTILO DA NAVBAR FIM */
+
+/* ESTILO DA PAGINA DE LOGIN COMEÇO */
+
+.loginpage{
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+}
+
+
+
+.loginpage .loginform ul{
+    list-style-type: none;
+}
+
+
+.loginpage .loginform{
+    top:25px; 
+    margin: auto;
+    justify-content: center;
+    background-color: #262626;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 400px;
+    height: 350px;
+    padding: 30px;
+    text-align: center; 
+    position: relative;
+    box-shadow: 0px 0px 9px 0px #000000
+}
+
+.loginpage a{
+  text-decoration: none;
+}
+
+.loginpage .entrybox{
+  background-color: #1a1a1a;
+  color:white;
+  border-radius: 8px;
+  padding: 10px;
+  border:0;
+  margin-top: 15px;
+
+  width: 25em;  height: 2em;
+}
+
+.loginpage .loginform #password{
+  margin-bottom: 15px;
+}
+
+.loginpage  #loginico{
+  width: 80px;
+  padding-bottom: 10px;
+}
+
+.loginpage .loginform .headertext{
+  font-weight: bold;
+  font-size: 25px;
+  color:gray;
+}
+
+.loginpage  .submitbuttons{
+  margin-top: 15px;
+  border:0;
+  background-color: #1a1a1a;
+  font-size: 20px;
+  border-radius: 8px;
+  width: 10em;  height: 2em;
+  color: white;
+  cursor: pointer;
+
+}
+
+.loginpage .esqueceubox{
+  top: 25px;
+  position: relative;
+  text-align: center;
+  padding: 6px;
+  margin: auto;
+  width: 448px;
+  height: 30px;
+  background-color: #262626;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 0px 9px 0px #000000;
+
+}
+
+.loginpage .esqueceubox  .textesqueceu{
+  color: gray;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+
+}
+
+.loginpage .loginform .checkbox{
+  float: left;
+  margin-left: 25px;
+  color:gray;
+  font-size: 15px;
+
+}
+
+
+/* ESTILO DA PAGINA DE LOGIN FIM */
