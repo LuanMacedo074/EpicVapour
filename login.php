@@ -3,6 +3,8 @@ require './islogged.php';
 
 if (check_is_logged() == true){
     die(http_response_code(403));}?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +21,7 @@ if (check_is_logged() == true){
 <body class="loginpage">
     <?php require 'navbar.php'?>
     <div class="loginform">
-        <form action="createsession.php" method="post" onsubmit="return validateLogin();">
+        <form action="createsession.php" method="post">
             <ul>
                 <li><img id="loginico" src="siteimages/loginicon.png"> <br</li>
                 <li><label class = "headertext">SIGN IN</label> <br></li>
@@ -29,13 +31,13 @@ if (check_is_logged() == true){
                     <span class="checkmark">Manter conectado</span></li><br>
                 <li><button class="submitbuttons" id="btn1" type="submit">ENTRAR</button></li>
                 <?php if (array_key_exists("err", $_SESSION)){
-                    echo "<li><p> O USUÁRIO NÃO EXISTE</p></li>";
+                    echo "<li class='errlog'><p>USUÁRIO E SENHA NÃO ENCONTRADOS</p></li>";
                     session_unset();}?>
-            </ul>       
+            </ul>
         </form>
     </div>
     <div class="esqueceubox">
-        <a class="textesqueceu" href="registro.php">ESQUECEU SUA SENHA ?</a>
+        <a class="textesqueceu" href="recuperarsenha.php">ESQUECEU SUA SENHA ?</a>
     </div>
 </body>
 </html>

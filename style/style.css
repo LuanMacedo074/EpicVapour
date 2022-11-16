@@ -1,3 +1,4 @@
+/* INICIO DAS CONFIGURAÇÕES GERAIS DA APLICAÇÃO */
 *{ 
   margin: 0;
   padding: 0;
@@ -11,6 +12,8 @@ input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: white;
   }
+
+/* FINAL DAS CONFIGURAÇÕES GERAIS DA APLICAÇÃO */
 
 
 /* ESTILO DA NAVBAR COMEÇO */
@@ -64,8 +67,24 @@ input:-webkit-autofill:active {
   color: white;
 }
 
-#logo{
+#logo-main{
     width: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+#logo-hover{
+  position: absolute;
+  left: 27px;
+  z-index: 3;
+  width: 50px;
+  opacity: 0;
+  object-fit: contain;
+}
+
+#logo-hover:hover{
+  width: 50px;
+  opacity: 1;
 }
 
 /* ESTILO DA NAVBAR FIM */
@@ -172,5 +191,20 @@ input:-webkit-autofill:active {
 
 }
 
+.loginpage .loginform .errlog{
+  padding: 5px;
+  color: red;
+}
+
 
 /* ESTILO DA PAGINA DE LOGIN FIM */
+
+/* ESTILO DA PAGINA DE REGISTRO COMEÇO*/
+
+
+.registerpage{
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+}
+
+/* ESTILO DA PAGINA DE  REGISTRO FIM*/

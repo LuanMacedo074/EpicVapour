@@ -11,7 +11,7 @@ function generate_recovery_email($email, $db){
     }
     $encrypted_recovery_code = password_hash($recovery_code, PASSWORD_BCRYPT);
     $data = get_user_data($db, $email);
-    if ($data){
+    if ($data && $data['is_active']){
         $sql = file_get_contents("./sql/setrecoverycode.sql");
         $db->prepare($sql)->execute([$encrypted_recovery_code, $data['email']]);
         $recovery_link = "http://localhost/projetounidadeiii/EpicVapour/resetarsenha.php?email=$email&recovery_code=$recovery_code";

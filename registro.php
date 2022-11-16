@@ -3,6 +3,8 @@ require './islogged.php';
 
 if (check_is_logged() == true){
     die(http_response_code(403));}?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +16,9 @@ if (check_is_logged() == true){
     <script src="js/jquery-3.6.0.min.js"></script>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <script src="js/validate.js"></script>
+    <?php require './fonts'?>
 </head>
-<body>
+<body class ="registerpage">
     <?php require 'navbar.php'?>
     <div class="registerform">
         <form action="addregistro.php" method="post" onsubmit="return validateForm();">

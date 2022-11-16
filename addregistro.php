@@ -2,6 +2,7 @@
 
     require './db.php';
     require_once './check.php';
+    
 
     function create_user_id($database){
         $rows = $database->exec("SELECT COUNT(*) FROM public.usuario");
@@ -15,7 +16,7 @@
         return substr(str_shuffle($str), 0, 21);
     }
 
-    function get_user_data($data, $salt){
+    function create_user_data($data, $salt){
         $email = $data["email"];
         $username = strtolower($data["username"]);
         $password = password_hash($salt.$data["password"], PASSWORD_BCRYPT);
@@ -48,7 +49,7 @@
     $db = new DB();
     $salt = create_user_salt();
     $id = create_user_id($db);
-    $user = get_user_data($_POST, $salt);
+    $user = create_user_data($_POST, $salt);
     $language = get_browser_language();
     $stamp = generate_expiration_time();
     $code = generate_activation_code();

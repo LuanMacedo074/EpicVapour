@@ -2,7 +2,10 @@
 <div class="navbar">
         <nav>
             <ul>
-                <li><a class="img" href="index.php" style="margin-left: 15px;"><img src="./siteimages/logo.png" id="logo"></a></li>
+                <li><a class="img" href="index.php" style="margin-left: 15px;">
+                <img src="./siteimages/logo.png" id="logo-main">
+                <img src="./siteimages/logo2.png" id="logo-hover">
+                </a></li>
                 <li><a href="javascript:void(0)">Comunidade</a></li>
                 <li><a href="javascript:void(0)">Jogos</a></li>
                 <li><a href="javascript:void(0)">Contato</a></li>
