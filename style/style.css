@@ -207,4 +207,213 @@ input:-webkit-autofill:active {
   background-color: #1a1a1a;
 }
 
+.registerpage .registerform{
+  text-align: center;
+  top:25px; 
+  margin: auto;
+  justify-content: center;
+  background-color: #262626;
+  border-radius: 10px;
+  width: 400px;
+  height: 450px;
+  padding: 30px; 
+  position: relative;
+  box-shadow: 0px 0px 9px 0px #000000
+}
+
+.registerpage .registerform ul{
+  list-style-type: none;
+}
+
+.registerpage .entrybox{
+  background-color: #1a1a1a;
+  color:white;
+  border-radius: 8px;
+  padding: 10px;
+  border:0;
+  margin-top: 15px;
+
+  width: 13em;  height: 2em;
+}
+
+.registerpage  .submitbuttons{
+  margin-top: 15px;
+  border:0;
+  background-color: #1a1a1a;
+  font-size: 20px;
+  border-radius: 8px;
+  width: 10em;  height: 2em;
+  color: white;
+  cursor: pointer;
+
+}
+
+.registerpage  #loginico{
+  width: 80px;
+  padding-bottom: 10px;
+}
+
+.registerpage .registerform .headertext{
+  font-weight: bold;
+  font-size: 25px;
+  color:gray;
+}
+
+.registerpage .alerttext {
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  font-size: 12px;
+  text-align: left;
+}
+
+.registerpage .registerform .errlog{
+  padding: 5px;
+  color: red;
+}
+
+
 /* ESTILO DA PAGINA DE  REGISTRO FIM*/
+
+/* ESTILO DA PAGINA RECUPERAR SENHA COMEÇO */
+
+.forgotpage{
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+}
+
+.forgotpage .recoveryform{
+  text-align: center;
+  top:25px; 
+  margin: auto;
+  justify-content: center;
+  background-color: #262626;
+  border-radius: 10px;
+  width: 400px;
+  height: 450px;
+  padding: 30px; 
+  position: relative;
+  box-shadow: 0px 0px 9px 0px #000000
+}
+
+.forgotpage .recoveryform ul{
+  list-style-type: none;
+}
+
+.forgotpage  #loginico{
+  width: 80px;
+  padding-bottom: 10px;
+}
+
+.forgotpage .recoveryform .headertext{
+  font-weight: bold;
+  font-size: 25px;
+  color:gray;
+  
+}
+
+.forgotpage  .submitbuttons{
+  margin-top: 15px;
+  border:0;
+  background-color: #1a1a1a;
+  font-size: 20px;
+  border-radius: 8px;
+  width: 10em;  height: 2em;
+  color: white;
+  cursor: pointer;
+
+}
+
+.forgotpage .entrybox{
+  background-color: #1a1a1a;
+  color:white;
+  border-radius: 8px;
+  padding: 10px;
+  border:0;
+  margin-top: 15px;
+  width: 25em;  height: 2em;
+}
+
+.forgotpage .formtext {
+  top: 10px;
+  position: relative;
+  padding: 15px;
+  color: white;
+  font-size: 15px;
+  text-align: left;
+}
+
+.forgotpage #sendbutton{
+  position: relative;
+  top: 175px;
+}
+
+
+/* ESTILO DA PAGINA RECUPERAR SENHA FIM */
+
+/* ESTILO DA PAGINA RESETAR SENHA COMEÇO */
+
+.resetpasspage {  
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+}
+
+.resetpasspage .resetpassform{
+  text-align: center;
+  top:25px; 
+  margin: auto;
+  justify-content: center;
+  background-color: #262626;
+  border-radius: 10px;
+  width: 400px;
+  height: 450px;
+  padding: 30px; 
+  position: relative;
+  box-shadow: 0px 0px 9px 0px #000000
+}
+
+.resetpasspage .resetpassform ul{
+  list-style: none;
+}
+
+.resetpasspage  .submitbuttons{
+  margin-top: 15px;
+  border:0;
+  background-color: #1a1a1a;
+  font-size: 20px;
+  border-radius: 8px;
+  width: 10em;  height: 2em;
+  color: white;
+  cursor: pointer;
+
+}
+
+.resetpasspage .entrybox{
+  background-color: #1a1a1a;
+  color:white;
+  border-radius: 8px;
+  padding: 10px;
+  border:0;
+  margin-top: 15px;
+  width: 25em;  height: 2em;
+}
+
+.resetpasspage  #loginico{
+  width: 80px;
+  padding-bottom: 10px;
+}
+
+.resetpasspage .resetpassform .headertext{
+  font-weight: bold;
+  font-size: 25px;
+  color:gray;
+  
+}
+
+.resetpasspage p{
+  padding: 5px;
+  color: red;
+  text-align: center;
+}
+  
+/* ESTILO DA PAGINA RESETAR SENHA FIM */

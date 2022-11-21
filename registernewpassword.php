@@ -10,6 +10,7 @@ session_start();
 $db = new DB();
 
 $email = $_GET['email'];
+$recovery_code = $_GET['recovery_code'];
 $oldpassword = $_POST['oldpassword'];
 $password = $_POST['password'];
 $confirmpassword = $_POST['confirmpassword_'];
@@ -26,6 +27,7 @@ if ($oldpassword == $password){
     $sql = file_get_contents("./sql/registernewpassword.sql");
     $db->prepare($sql)->execute([$newpass,null, $data['email']]);
 }
+var_dump($_SESSION);
 
 $db = null;
-die(header("Location: ./resetarsenha.php?email=$email"));
+die(header("Location: ./resetarsenha.php?email=$email&recovery_code=$recovery_code"));

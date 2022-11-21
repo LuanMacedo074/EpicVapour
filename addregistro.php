@@ -2,6 +2,8 @@
 
     require './db.php';
     require_once './check.php';
+    require "./getuserdata.php";
+    session_start();
     
 
     function create_user_id($database){
@@ -45,20 +47,23 @@
     echo "<a href='$activation_link'>Ativar</a>"; 
     }
 
-
     $db = new DB();
-    $salt = create_user_salt();
-    $id = create_user_id($db);
-    $user = create_user_data($_POST, $salt);
-    $language = get_browser_language();
-    $stamp = generate_expiration_time();
-    $code = generate_activation_code();
-    $activatecode = password_hash($code, PASSWORD_BCRYPT);
+    if (get_user_data($db, $_POST['email'])){
+        $_SESSION["err"] = 1;
+        die(header("Location: ./registro.php"));
+    } else {
+        $salt = create_user_salt();
+        $id = create_user_id($db);
+        $user = create_user_data($_POST, $salt);
+        $language = get_browser_language();
+        $stamp = generate_expiration_time();
+        $code = generate_activation_code();
+        $activatecode = password_hash($code, PASSWORD_BCRYPT);
 
-    $sql = file_get_contents("./sql/addregistro.sql");
+        $sql = file_get_contents("./sql/addregistro.sql");
 
-    $db->prepare($sql)->execute([$user[0], $user[1], $id, $user[2], 0, $salt, $language, $activatecode, $stamp]);
+        $db->prepare($sql)->execute([$user[0], $user[1], $id, $user[2], 0, $salt, $language, $activatecode, $stamp]);
 
-    send_activation_email($user[0], $code);
+        send_activation_email($user[0], $code);}
 
     $db = null;

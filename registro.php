@@ -5,6 +5,7 @@ if (check_is_logged() == true){
     die(http_response_code(403));}?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +24,18 @@ if (check_is_logged() == true){
     <div class="registerform">
         <form action="addregistro.php" method="post" onsubmit="return validateForm();">
             <ul>
-                <li><input type="text" placeholder="examplo@dominio.com" id = "email" name="email"> <input type="text" placeholder="Confirma Email" id="confirmemail" name="confirmemail"></li>
-                <li><input type="text" placeholder="Usuario" id="username" name="username"></li>
-                <li><input type="password" placeholder="Senha" id="password"name="password"> <input type="password" id="confirmpassword"name="confirmpassword "placeholder="Confirma Senha"></li>
-                <li> <button class="btn1" type="submit">REGISTRAR</button></li>
+                <li><img id="loginico" src="siteimages/loginicon.png"> <br</li>
+                <li><label class = "headertext">REGISTRO</label> <br></li>
+                <li><input type="text" placeholder="Email" id ="email" name="email" class="entrybox"> <input type="text" class="entrybox" placeholder="Confirma Email" id="confirmemail" name="confirmemail"></li>
+                <li><input type="text" style="width: 28em;" placeholder="Usuario" class="entrybox" id="username" name="username"></li>
+                <li><input type="password" placeholder="Senha" class="entrybox" id="password"name="password"> <input type="password" class="entrybox" id="confirmpassword"name="confirmpassword "placeholder="Confirma Senha"></li>
+                <li><label class="alerttext"> Use oito ou mais caracteres com uma combinação de letras, números e símbolos.</label></li>
+                <li> <button class="submitbuttons" type="submit">REGISTRAR</button></li>
+                <?php 
+                    if (array_key_exists("err", $_SESSION)){
+                    echo "<li class='errlog'><p>ESTE EMAIL JÁ POSSUI CADASTRO</p></li>";
+                    session_unset();}
+                ?>
             </ul>
         </form>
     </div>
