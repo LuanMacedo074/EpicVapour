@@ -20,14 +20,16 @@ $salt = $data['salt'];
 
 if ($oldpassword == $password){
     $_SESSION['errcode'] = 1;
+    $db = null;
+    die(header("Location: ./resetarsenha.php?email=$email&recovery_code=$recovery_code"));
 }if(! password_verify($data["salt"].$oldpassword, $data["senha"])){
-    $_SESSION['errcode'] = 2;   
+    $_SESSION['errcode'] = 2;
+    $db = null;
+    die(header("Location: ./resetarsenha.php?email=$email&recovery_code=$recovery_code"));
 }if (password_verify($data["salt"].$oldpassword, $data["senha"]) && $oldpassword != $password){
     $newpass = password_hash($salt.$password, PASSWORD_BCRYPT);
     $sql = file_get_contents("./sql/registernewpassword.sql");
     $db->prepare($sql)->execute([$newpass,null, $data['email']]);
+    die(header("Location: ./senharesetada.php"));
+    $db = null;
 }
-var_dump($_SESSION);
-
-$db = null;
-die(header("Location: ./resetarsenha.php?email=$email&recovery_code=$recovery_code"));
