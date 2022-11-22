@@ -43,7 +43,7 @@
     }
 
     function send_activation_email($email, $activation_code){
-    $activation_link = "http://localhost/projetounidadeiii/EpicVapour/ativarconta.php?email=$email&activation_code=$activation_code";
+    $activation_link = "http://" . $_SERVER['SERVER_NAME'] ."/EpicVapour/ativarconta.php?email=$email&activation_code=$activation_code";
     echo "<a href='$activation_link'>Ativar</a>"; 
     }
 

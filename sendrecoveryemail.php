@@ -14,12 +14,13 @@ function generate_recovery_email($email, $db){
     if ($data && $data['is_active']){
         $sql = file_get_contents("./sql/setrecoverycode.sql");
         $db->prepare($sql)->execute([$encrypted_recovery_code, $data['email']]);
-        $recovery_link = "http://localhost/projetounidadeiii/EpicVapour/resetarsenha.php?email=$email&recovery_code=$recovery_code";
+        $recovery_link = "http://" . $_SERVER['SERVER_NAME'] . "/EpicVapour/resetarsenha.php?email=$email&recovery_code=$recovery_code";
         return $recovery_link;}
 }
 
 $db = new DB();
 
+var_dump($_POST);
 $useremail = $_POST['email'];
 $link = generate_recovery_email($useremail, $db);
 echo "<a href='$link'>RESETAR</a>";
