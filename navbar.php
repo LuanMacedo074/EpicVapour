@@ -1,4 +1,3 @@
-<script src="js/jqueryfunctions.js"></script>
 <div class="navbar">
         <nav>
             <ul>
@@ -27,7 +26,7 @@ $saldo = $data["saldo"];
 ?>
 <div class="username">
     <ul>
-    <li style="float:right"><a href="javascript:void(0)"><?php echo strtoupper($username)," R$: $saldo"?></a></li>
+    <li style="float:right"><a href="javascript:void(0)"><?php echo strtoupper($username),", R$: $saldo"?></a></li>
     <div class="usermenu">
         <ul>
             <li><a href="javascript:void(0)">Perfil</a></li>

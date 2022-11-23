@@ -468,3 +468,28 @@ input:-webkit-autofill:active {
 }
   
 /* ESTILO DA PAGINA RESETAR SENHA FIM */
+
+/* ESTILO DA PAGINA REDIRECT SENHA COMEÇO*/
+
+.senharesetada{ 
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+}
+
+.senharesetada .logo{
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+}
+
+.senharesetada p{
+  padding-top: 25px;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+}
+
+
+/* ESTILO DA PAGINA REDIRECT SENHA FIM  */
