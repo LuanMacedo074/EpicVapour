@@ -471,12 +471,12 @@ input:-webkit-autofill:active {
 
 /* ESTILO DA PAGINA REDIRECT SENHA COMEÇO*/
 
-.senharesetada{ 
+.redirect{ 
   font-family: 'Roboto', sans-serif;
   background-color: #1a1a1a;
 }
 
-.senharesetada .logo{
+.redirect .logo{
   width: 150px;
   display: block;
   margin-left: auto;
@@ -484,7 +484,7 @@ input:-webkit-autofill:active {
   padding-top: 25px;
 }
 
-.senharesetada p{
+.redirect p{
   padding-top: 25px;
   color: white;
   text-align: center;
