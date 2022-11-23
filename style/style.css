@@ -18,35 +18,19 @@ input:-webkit-autofill:active {
 
 /* ESTILO DA NAVBAR COMEÇO */
 .navbar {
-  height:73px; 
-  max-height:73px;
   width: 100%; 
-  display: inline-block;
+  height: 73px;
+  max-height: 73px;
   overflow: hidden;
   font-family: 'Oswald', sans-serif;
-}
-
-.navbar .nav{
-  display:block;
-}
-
-.navbar li p{
-  display: block;
-  color: gray;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
 }
 
 .navbar ul {
   display: block;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
   background-color: #262626;
   position: sticky;
-  top: 0;
 }
 
 .navbar li {
@@ -85,6 +69,73 @@ input:-webkit-autofill:active {
 #logo-hover:hover{
   width: 50px;
   opacity: 1;
+}
+
+.usermenu {
+  text-align: right;
+  box-shadow: 0px 0px 16px 5px black;
+  display: none;
+  overflow: hidden;
+  word-break: break-all;
+  position: absolute;
+  right: 0;
+  top: 73px;
+}
+
+.username{
+  text-align: right;
+  font-family: 'Oswald', sans-serif;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.username ul{
+  list-style-type: none;
+}
+
+.username li a {
+  font-size: 20px;
+  display: block;
+  color: gray;
+  text-align: center;
+  padding: 20px 13px;
+  text-decoration: none;
+}
+
+.username li a:hover {
+  color: white;
+}
+
+
+.usermenu ul {
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  min-width: 200px;
+  background-color: #262626;
+}
+
+.usermenu li {
+  text-align: right;
+  padding: 10px;
+}
+
+.usermenu li a {
+  font-size: 20px;
+  color: gray;
+  text-align: center;
+  padding: 5px 2px;
+  text-decoration: none;
+}
+
+.usermenu li a:hover{
+  color: white;
+}
+
+.username:hover .usermenu{
+  display: block;
 }
 
 /* ESTILO DA NAVBAR FIM */

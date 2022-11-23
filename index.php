@@ -15,6 +15,5 @@
 </head>
 <body>
     <?php require 'navbar.php'?>
-    <a href="logout.php">LOGOUT</a>
 </body>
 </html>

@@ -9,21 +9,33 @@
                 <li><a href="javascript:void(0)">Comunidade</a></li>
                 <li><a href="javascript:void(0)">Jogos</a></li>
                 <li><a href="javascript:void(0)">Contato</a></li>
-                <?php 
-                if (! array_key_exists("userdata", $_SESSION)){ echo <<<TXT
-                <li style="float:right; margin-right: 15px"><a href="registro.php">Registro</a></li>
-                <li style="float:right"><a href="login.php">Entrar</a></li>
-                TXT;
-                }
-                else{
-                $data = $_SESSION["userdata"];
-                $username = $data["nomeUsuario"];
-                $saldo = $data["saldo"];
-                ?>
-                <li style="float:right"><a href="javascript:void(0)"><?php echo strtoupper($username)?></a></li>
-                <li style="float:right"><a href="javascript:void(0)"><?php echo "R$: $saldo" ?></a></li>    
-                <?php
-                }?>
             </ul>
         </nav>
 </div>
+<?php
+if (! array_key_exists("userdata", $_SESSION)){ echo <<<TXT
+<div class="username">
+<ul>
+<li style="float:right; margin-right: 15px"><a href="registro.php">Registro</a></li>
+<li style="float:right"><a href="login.php">Entrar</a></li>
+</ul>
+</div>
+TXT;}else{
+$data = $_SESSION["userdata"];
+$username = $data["nomeUsuario"];
+$saldo = $data["saldo"];
+?>
+<div class="username">
+    <ul>
+    <li style="float:right"><a href="javascript:void(0)"><?php echo strtoupper($username)," R$: $saldo"?></a></li>
+    <div class="usermenu">
+        <ul>
+            <li><a href="javascript:void(0)">Perfil</a></li>
+            <li><a href="javascript:void(0)">Adicionar Saldo</a></li>
+            <li><a href="logout.php">Sair</a></li>
+        </ul>
+    </div>
+    </ul>
+</div>
+<?php }?>
+
