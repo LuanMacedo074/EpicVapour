@@ -1,4 +1,5 @@
-<?php session_start();?>
+<?php session_start();
+require 'checksession.php'; ?>
 
 
 <!DOCTYPE html>
@@ -15,5 +16,6 @@
 </head>
 <body>
     <?php require 'navbar.php'?>
+
 </body>
 </html>

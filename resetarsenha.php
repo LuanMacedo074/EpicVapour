@@ -22,8 +22,8 @@ require './islogged.php';
 <body class ="resetpasspage">
     <?php require 'navbar.php'?>
     <?php require_once 'check.php';
-    $email = $_GET['email'];
-    $recovery_code = $_GET['recovery_code'];
+    @$email = $_GET['email'];
+    @$recovery_code = $_GET['recovery_code'];
     $db = new DB();
     $userdata = get_user_data($db, $email);
     ?>
@@ -38,16 +38,16 @@ require './islogged.php';
                     <li><input type="password" class="entrybox" placeholder="Senha nova" id="password" name="password"></li>
                     <li><input type="password" class="entrybox" id="confirmpassword" name="confirmpassword "placeholder="Confirma Senha"></li>
                     <li><button class="submitbuttons" type="submit">RESETAR</button></li>               
-                <?php if (null !== $_SESSION['errcode'] && $_SESSION['errcode'] == 2){?>
+                <?php if (array_key_exists('errcode', $_SESSION) && $_SESSION['errcode'] == 2){?>
                     <li><label class="errcode">A nova senha não pode ser igual a senha anterior.</label></li>
                     <?php session_unset()?>
-                <?php } else if(null !== $_SESSION['errcode'] && $_SESSION['errcode'] == 1){?>
+                <?php } else if(array_key_exists('errcode', $_SESSION) && $_SESSION['errcode'] == 1){?>
                     <li><label class="errcode">A senha anterior não coincide.</label></li>
                     <?php session_unset()?>
                 </ul>
-            <?php }?>
+            <?php } if (! isset($_GET['email']) && ! isset($_GET['recovery_code'])){?>
                 <ul><li><label style="color: red;" class="errcode">Houve um erro com sua solicitação</label></li></ul>
-            <?php }?>   
+            <?php }}?>   
         </form>
     </div>
     <?php $db = null;?>

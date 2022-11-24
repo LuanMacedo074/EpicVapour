@@ -1,7 +1,5 @@
 <?php 
 
-require_once './check.php';
-
 class DB extends PDO
 {
     public function __construct()
