@@ -1,7 +1,7 @@
 <?php 
 
 require_once './db.php';
-session_start();
+
 function get_user_data_by_id($db, $id){
     $sql = file_get_contents("./sql/getuserdatabyid.sql");
 
@@ -22,13 +22,8 @@ $username = $userdata["nomeUsuario"];
 $descricao = $userdata["descricao"];
 $id = $_GET['id'];
 
-
-if (array_key_exists('userdata', $_SESSION)){
-    $session = $_SESSION['userdata'];
-};
-
 $db = null;
-?>
+session_start();?>
 
 
 <!DOCTYPE html>
@@ -37,7 +32,7 @@ $db = null;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMUNIDADE :: <?PHP echo $username?></title>
+    <title>EDITAR PERFIL :: <?PHP echo $username?></title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <?php require './fonts'?>
     <link rel="stylesheet" href="./style/style.css">
@@ -45,14 +40,8 @@ $db = null;
 </head>
 <body class="profilepage">
     <?php require 'navbar.php'?>
-    <div class="showprofile">
-        <img src="<?php echo $avatar?>" class="avatar"> 
-        <p class="name"><?php echo $username?></p>
-         <?php if (!$descricao){?>
-            <p class="descricao"> Nada informado.</p>
-         <?php } if (isset($session) && $session['idPublico'] == $_GET['id']){?>
-         <button class="editarperfil" onclick='location.href="editarperfil.php?id=<?php echo $id?>"'>Editar perfil</button>
-        <?php }?>
+    <div class="editprofile">
+
     </div>
 </body>
 </html>

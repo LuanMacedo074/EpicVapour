@@ -99,7 +99,7 @@ input:-webkit-autofill:active {
   display: block;
   color: gray;
   text-align: center;
-  padding: 20px 13px;
+  padding: 20px 14px;
   text-decoration: none;
 }
 
@@ -493,3 +493,67 @@ input:-webkit-autofill:active {
 
 
 /* ESTILO DA PAGINA REDIRECT SENHA FIM  */
+
+/* ESTILO DA PAGINA PERFIL COMEÇO */
+
+.profilepage{
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+}
+
+.profilepage .showprofile {
+  box-shadow: -1px 0px 38px 12px rgba(0,0,0,0.75);
+  position:absolute;
+  top:73px;
+  bottom:0;
+  left:0;
+  right:0; 
+  margin: auto;
+  width: 70%;
+  background: linear-gradient(90deg, #6e627546 0%, #515ada3b 100%);
+}
+
+.profilepage .showprofile .avatar{
+  width: 184px;
+  height: 184px;
+  border: 2px solid rgb(0, 255, 255);;
+  position: absolute;
+  left:50px;
+  top: 50px;
+}
+
+.profilepage .showprofile .name {
+  position: absolute;
+  top: 50px;
+  left: 270px;
+  font-size: 50px;
+  color: white;
+}
+
+.profilepage .showprofile .descricao {
+  position: absolute;
+  top: 130px;
+  left: 270px;
+  font-size: 15px;
+  color: white;
+}
+
+.profilepage .showprofile .editarperfil{
+  position: absolute;
+  color: white;
+  font-size: 15px;
+  top: 50px;
+  right: 50px;
+  background-color: rgba(128, 2, 245, 0.1);
+  border: none;
+  padding: 15px 32px;
+  border-radius: 10px;
+
+}
+
+.profilepage .showprofile .editarperfil:hover{
+  box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+  background-color: rgba(128, 2, 245, .3);
+}
+
+/* ESTILO DA PAGINA PERFIL FIM */

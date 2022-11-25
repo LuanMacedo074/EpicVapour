@@ -32,7 +32,7 @@ if ($data && ! $data["is_active"]){
     echo "usuario não encontrado";
 }
 
-$db = null;
+
 session_start();
 require_once './check.php';
 ?>
@@ -52,8 +52,21 @@ require_once './check.php';
     <?php require './fonts'?>
 </head>
 <body class="redirect">
-    <?php require './navbar.php'?>
+    <?php
+    $data = get_user_data($db,$_GET['email']); 
+    require './navbar.php'?>
     <img src="./siteimages/loginicon.png" class ="logo">
-    <p>Sua conta foi ativada. Você será redirecionado automaticamente.</p>
+    <?php if ($data['is_active']){?>
+        <p>Sua conta foi ativada. Você será redirecionado automaticamente.</p>
+    <?php } if (!$data['is_active'] && !check_expiration_time($data['tempo_codigo'])) {?>
+        <p>Seu link expirou. Você pode se cadastrar novamente.
+        Você será redirecionado automaticamente.
+        </p>
+    <?php 
+        $sql = file_get_contents("./sql/deleteuser.sql");
+        $db->prepare($sql)->execute([$data["email"]]);
+        };
+        $db = null;
+    ?>
 </body>
 </html>

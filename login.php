@@ -3,8 +3,6 @@ require './islogged.php';
 
 if (check_is_logged() == true){
     die(http_response_code(403));}?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +19,7 @@ if (check_is_logged() == true){
 <body class="loginpage">
     <?php require 'navbar.php'?>
     <div class="loginform">
-        <form action="createsession.php" method="post">
+        <form action="createsession.php" method="post" onsubmit="return validateForm();">
             <ul>
                 <li><img id="loginico" src="siteimages/loginicon.png"> <br</li>
                 <li><label class = "headertext">SIGN IN</label> <br></li>

@@ -26,7 +26,7 @@
     }
 
     function get_browser_language(){
-        return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
+        return explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE'])[0];
     }
 
     function generate_expiration_time(){

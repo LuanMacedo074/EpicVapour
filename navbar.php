@@ -8,6 +8,7 @@
                 <li><a href="javascript:void(0)">Comunidade</a></li>
                 <li><a href="javascript:void(0)">Jogos</a></li>
                 <li><a href="javascript:void(0)">Contato</a></li>
+                <li><a href="javascript:void(0)">Biblioteca</a></li>
             </ul>
         </nav>
 </div>
@@ -23,18 +24,22 @@ TXT;}else{
 $data = $_SESSION["userdata"];
 $username = $data["nomeUsuario"];
 $saldo = $data["saldo"];
-?>
+$id = strval($data["idPublico"]);
+while (strlen($id) < 7){
+    $id = "0" . $id;
+};?>
 <div class="username">
     <ul>
     <li style="float:right"><a href="javascript:void(0)"><?php echo strtoupper($username),", R$: $saldo"?></a></li>
     <div class="usermenu">
         <ul>
-            <li><a href="javascript:void(0)">Perfil</a></li>
+            <li><a href=<?php echo "./perfil.php?id=$id"?>>Perfil</a></li>
             <li><a href="javascript:void(0)">Adicionar Saldo</a></li>
             <li><a href="logout.php">Sair</a></li>
         </ul>
     </div>
     </ul>
 </div>
-<?php }?>
+<?php 
+}?>
 

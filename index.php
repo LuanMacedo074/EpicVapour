@@ -15,7 +15,7 @@ require 'checksession.php'; ?>
     <script src="js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <?php require 'navbar.php'?>
-
+    <?php require 'navbar.php';
+    var_dump($_SESSION)?>
 </body>
 </html>
