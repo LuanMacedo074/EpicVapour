@@ -1,6 +1,0 @@
-Options -Indexes
-
-<files *.ini>
-    order deny,allow
-    deny from all
-</files>
