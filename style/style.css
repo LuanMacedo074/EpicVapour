@@ -436,7 +436,6 @@ input:-webkit-autofill:active {
   width: 10em;  height: 2em;
   color: white;
   cursor: pointer;
-
 }
 
 .resetpasspage .entrybox{
@@ -502,6 +501,7 @@ input:-webkit-autofill:active {
 }
 
 .profilepage .showprofile {
+  font-family: 'Roboto', sans-serif;
   box-shadow: -1px 0px 38px 12px rgba(0,0,0,0.75);
   position:absolute;
   top:73px;
@@ -516,13 +516,14 @@ input:-webkit-autofill:active {
 .profilepage .showprofile .avatar{
   width: 184px;
   height: 184px;
-  border: 2px solid rgb(0, 255, 255);;
+  border: 2px solid rgba(174, 0, 255, 0.644);;
   position: absolute;
   left:50px;
   top: 50px;
 }
 
 .profilepage .showprofile .name {
+  font-family: 'Roboto', sans-serif;
   position: absolute;
   top: 50px;
   left: 270px;
@@ -531,6 +532,7 @@ input:-webkit-autofill:active {
 }
 
 .profilepage .showprofile .descricao {
+  font-family: 'Roboto', sans-serif;
   position: absolute;
   top: 130px;
   left: 270px;
@@ -548,7 +550,6 @@ input:-webkit-autofill:active {
   border: none;
   padding: 15px 32px;
   border-radius: 10px;
-
 }
 
 .profilepage .showprofile .editarperfil:hover{
@@ -556,4 +557,109 @@ input:-webkit-autofill:active {
   background-color: rgba(128, 2, 245, .3);
 }
 
+
 /* ESTILO DA PAGINA PERFIL FIM */
+
+.editprofilepage{
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+}
+
+.editprofilepage .editprofile{
+  box-shadow: -1px 0px 38px 12px rgba(0,0,0,0.75);
+  position:absolute;
+  top:73px;
+  bottom:0;
+  left:0;
+  right:0; 
+  margin: auto;
+  width: 70%;
+  background: linear-gradient(90deg, #6e627546 0%, #515ada3b 100%);
+}
+
+.editprofilepage .editprofile .avatarinput{
+  display: none;
+
+}
+
+.editprofilepage .editprofile .custom-file-upload {
+  width: 184px;
+  height: 184px;
+  border: 2px solid rgba(174, 0, 255, 0.644);;
+  position: absolute;
+  left:50px;
+  top: 50px;
+
+}
+
+.editprofilepage .editprofile .avatar{
+  width: 184px;
+  height: 184px;
+  position: absolute;
+  z-index: 1;
+}
+
+.editprofilepage .editprofile .lupe{
+  width: 100px;
+  height: 100px;
+  left: 46px;
+  top: 46px;
+  position: absolute;
+  display: none;
+  z-index: 2;
+}
+
+.editprofilepage .editprofile .custom-file-upload:hover .lupe {
+display: block;
+}
+
+.editprofilepage .editprofile .usernameinput {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  position: absolute;
+  top: 50px;
+  left: 270px;
+  background-color: transparent;
+  border: none;
+  font-size: 50px;
+  resize: none;
+  width: 300px;
+  height: 70px;
+}
+
+.editprofilepage .editprofile .usernameinput:focus,
+.editprofilepage .editprofile .descriptioninput:focus { 
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+.editprofilepage .editprofile .descriptioninput {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  color: white;
+  top: 130px;
+  left: 270px;
+  font-size: 15px;
+  background-color: transparent;
+  border: none;
+  resize: none;
+  width: 300px;
+}
+
+.editprofilepage .editprofile .sendbtn{
+  position: absolute;
+  color: white;
+  font-size: 15px;
+  top: 50px;
+  right: 50px;
+  background-color: rgba(128, 2, 245, 0.1);
+  border: none;
+  padding: 15px 32px;
+  border-radius: 10px;
+
+}
+
+.editprofilepage .editprofile .sendbtn:hover{
+  box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+  background-color: rgba(128, 2, 245, .3);
+}

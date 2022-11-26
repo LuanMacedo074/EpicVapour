@@ -19,7 +19,10 @@ $db = new DB();
 $userdata = get_user_data_by_id($db, intval($_GET['id']));
 $avatar = $userdata['avatar_path'];
 $username = $userdata["nomeUsuario"];
-$descricao = $userdata["descricao"];
+if (!$userdata['descricao']){
+    $descricao = "Nada informado.";} else{
+    $descricao = $userdata["descricao"];
+}; 
 $id = $_GET['id'];
 
 $db = null;
@@ -38,10 +41,19 @@ session_start();?>
     <link rel="stylesheet" href="./style/style.css">
     <script src="js/jquery-3.6.0.min.js"></script>
 </head>
-<body class="profilepage">
+<body class="editprofilepage">
     <?php require 'navbar.php'?>
     <div class="editprofile">
-
+        <form enctype="multipart/form-data" action="updateprofile.php?id=<?php echo $id?>" class="editarperfilform" method="post">
+        <label class="custom-file-upload"> 
+            <img src="<?php echo $avatar?>" class="avatar">
+            <img src="./siteimages/lupe.png" class="lupe">
+            <input name="avatar" type="file" class="avatarinput" accept="image/*">
+        </label>
+        <textarea name="username" class="usernameinput" maxlength="10" placeholder="<?php echo $username?>"></textarea>
+        <textarea name="description" class="descriptioninput" rows="6" maxlength="200" placeholder="<?php echo $descricao?>"></textarea>
+        <button type="submit" class="sendbtn">CONFIRMAR</button>
+        </form>
     </div>
 </body>
 </html>

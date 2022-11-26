@@ -19,7 +19,10 @@ $db = new DB();
 $userdata = get_user_data_by_id($db, intval($_GET['id']));
 $avatar = $userdata['avatar_path'];
 $username = $userdata["nomeUsuario"];
-$descricao = $userdata["descricao"];
+if (!$userdata['descricao']){
+    $descricao = "Nada informado.";} else{
+    $descricao = $userdata["descricao"];
+}; 
 $id = $_GET['id'];
 
 
@@ -48,10 +51,9 @@ $db = null;
     <div class="showprofile">
         <img src="<?php echo $avatar?>" class="avatar"> 
         <p class="name"><?php echo $username?></p>
-         <?php if (!$descricao){?>
-            <p class="descricao"> Nada informado.</p>
-         <?php } if (isset($session) && $session['idPublico'] == $_GET['id']){?>
-         <button class="editarperfil" onclick='location.href="editarperfil.php?id=<?php echo $id?>"'>Editar perfil</button>
+        <p class="descricao"><?php echo $descricao?></p>
+        <?php if (isset($session) && $session['idPublico'] == $_GET['id']){?>
+            <button class="editarperfil" onclick='location.href="editarperfil.php?id=<?php echo $id?>"'>Editar perfil</button>
         <?php }?>
     </div>
 </body>
