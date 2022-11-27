@@ -40,20 +40,24 @@ session_start();?>
     <?php require './fonts'?>
     <link rel="stylesheet" href="./style/style.css">
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/functions.js"></script>
 </head>
 <body class="editprofilepage">
     <?php require 'navbar.php'?>
     <div class="editprofile">
-        <form enctype="multipart/form-data" action="updateprofile.php?id=<?php echo $id?>" class="editarperfilform" method="post">
-        <label class="custom-file-upload"> 
-            <img src="<?php echo $avatar?>" class="avatar">
-            <img src="./siteimages/lupe.png" class="lupe">
-            <input name="avatar" type="file" class="avatarinput" accept="image/*">
-        </label>
-        <textarea name="username" class="usernameinput" maxlength="10" placeholder="<?php echo $username?>"></textarea>
-        <textarea name="description" class="descriptioninput" rows="6" maxlength="200" placeholder="<?php echo $descricao?>"></textarea>
-        <button type="submit" class="sendbtn">CONFIRMAR</button>
-        </form>
+        <?php if ($_GET['id'] == $_SESSION['userdata']['idPublico']){?>
+            <form enctype="multipart/form-data" action="updateprofile.php?id=<?php echo $id?>" class="editarperfilform" method="post">
+            <label class="custom-file-upload"> 
+                <img src="<?php echo $avatar?>" class="avatar" id="avatar">
+                <img src="./siteimages/lupe.png" class="lupe">
+                <input name="avatar" type="file" class="avatarinput" onchange="loadFile(event)" accept="image/*">
+            </label>
+            <textarea name="username" class="usernameinput" maxlength="10" placeholder="<?php echo $username?>"></textarea>
+            <textarea name="description" class="descriptioninput" rows="6" maxlength="200" placeholder="<?php echo $descricao?>"></textarea>
+            <button type="submit" class="sendbtn">CONFIRMAR</button>
+            </form>
+            <button onclick="location.href='./perfil.php?id=<?php echo $id?>'" class="cancelbtn">CANCELAR </button>
+        <?php } else{die(header("Location: ./perfil.php?id=$id"));}?>
     </div>
 </body>
 </html>

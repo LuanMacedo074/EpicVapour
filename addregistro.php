@@ -7,9 +7,11 @@
     
 
     function create_user_id($database){
-        $rows = $database->exec("SELECT COUNT(*) FROM public.usuario");
+        $stmt = $database->prepare("SELECT COUNT(*) FROM public.usuario");
+        $stmt->execute();
+        $rows = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        return $rows + 1;
+        return $rows['count'] +1;
     }
 
     function create_user_salt(){

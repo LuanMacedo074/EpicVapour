@@ -34,7 +34,7 @@ if ($data && ! $data["is_active"]){
 
 
 session_start();
-require_once './check.php';
+// require_once './check.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
