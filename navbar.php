@@ -27,3 +27,4 @@
         <a style="float: right;" href="registro.php">Registro</a>
         <a style="float: right;" href="login.php">Entrar</a>
     <?php } ?>
+</div>

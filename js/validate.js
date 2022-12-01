@@ -44,22 +44,24 @@ function passwordValue(campo){
 }
 
 function validateForm() {
+  console.log('teste')
   var email = "email"
   var email2 = "confirmemail"
   var pass = "password"
   var pass2 = "confirmpassword"
 
   if (validatePassword(pass, pass2) && validateEmail(email, email2) && passwordValue(pass)){
+    console.log('teste1')
     return true
   } else{ 
+    console.log('teste2')
     return false
   }
 }
 
 function validateLogin(){
-  var email = document.getElementById("email").value;
 
-  if (isEmail(email) && passwordValue("password")){
+  if (isEmail('email') && passwordValue("password")){
     return true
   } else{
     return false

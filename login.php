@@ -17,9 +17,9 @@ if (check_is_logged() == true){
     <?php require './fonts'?>
 </head>
 <body class="loginpage">
-    <?php require 'navbar.php'?>
+    <?php require 'navbar.php'?>    
     <div class="loginform">
-        <form action="createsession.php" method="post" onsubmit="return validateForm();">
+        <form action="createsession.php" method="post" onsubmit="return validateLogin();">
             <ul>
                 <li><img id="loginico" src="siteimages/loginicon.png"> <br</li>
                 <li><label class = "headertext">SIGN IN</label> <br></li>
