@@ -1,7 +1,6 @@
 <?php
 
 require './db.php';
-// require_once './check.php';
 require_once './getuserdata.php';
 
 function checksession($db){
@@ -14,7 +13,6 @@ function checksession($db){
             $db->prepare($sql)->execute([$token, $data["email"]]);
             setcookie("email", $data['email'], time() + 10 * 365 * 24 * 60 * 60);
             setcookie("token", $token, time() + 10 * 365 * 24 * 60 * 60);
-            // die(header("Location: ./index.php"));
     }  }  
 }
 
