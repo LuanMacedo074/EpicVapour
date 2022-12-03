@@ -1,7 +1,6 @@
 <?php
 
     require './db.php';
-    require_once './check.php';
     require "./getuserdata.php";
     session_start();
     

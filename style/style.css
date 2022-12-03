@@ -16,15 +16,15 @@ input:-webkit-autofill:active {
 /* FINAL DAS CONFIGURAÇÕES GERAIS DA APLICAÇÃO */
 
 /* ESTILO DA NAVBAR COMEÇO */
-.navbar {
-  overflow: hidden;
+.navbarme {
+  /* overflow: hidden; */
   background-color: #262626;
   font-family: 'Oswald', sans-serif;
   min-height: 65px;
   height: 65px;
 }
 
-.navbar a {
+.navbarme a {
   font-size: 20px;
   color: gray;
   text-align: center;
@@ -33,12 +33,11 @@ input:-webkit-autofill:active {
   text-decoration: none;
 }
 
-.dropdown {
-  float: right;
+.dropdownme {
   overflow: hidden;
 }
 
-.dropdown .dropbtn {
+.dropdownme .dropbtn {
   font-size: 20px;
   border: none;
   outline: none;
@@ -49,16 +48,16 @@ input:-webkit-autofill:active {
   margin: 0; /* Important for vertical align on mobile phones */
 }
 
-.dropdown-content {
+.dropdown-contentme {
   display: none;
   position: absolute;
   background-color: #262626;
-  min-width: 160px;
+  min-width: 80px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-contentme a {
   float: none;
   color: gray;
   padding: 12px 16px;
@@ -67,11 +66,11 @@ input:-webkit-autofill:active {
   text-align: left;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbarme a:hover, .dropdown:hover .dropbtn {
   color: white;
 }
 
-.navbar .img{
+.navbarme .img{
   padding: 10px;
   
 }
@@ -97,11 +96,11 @@ width: 50px;
 opacity: 1;
 }
 
-.dropdown-content a:hover {
+.dropdown-contentme a:hover {
   color: white;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdownme:hover .dropdown-contentme {
   display: block;
 }
 /* ESTILO DA NAVBAR FIM */
@@ -558,7 +557,7 @@ opacity: 1;
 .editprofilepage .editprofile{
   box-shadow: -1px 0px 38px 12px rgba(0,0,0,0.75);
   position:absolute;
-  top:73px;
+  top:65px;
   bottom:0;
   left:0;
   right:0; 
@@ -677,3 +676,159 @@ display: block;
 }
 
 /* ESTILO PAGINA EDITAR PERFIL FIM */
+
+/* ESTILO PAGINA JOGO  COMEÇO */
+
+.gamepage{
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+}
+
+.gamepage .showgame{
+  font-family: 'Roboto', sans-serif;
+  position:absolute;
+  top:65px;
+  bottom:0;
+  left:0;
+  right:0; 
+  margin: auto;
+  width: 70%;
+}
+
+.gamepage .showgame .carousel 
+{ width:400px; height:400px; }
+
+.gamepage .showgame p{
+  color: white ;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.gamepage .showgame .gameicon{
+  width: 200;
+  position: absolute;
+  top: 0px;
+  left: 400px;
+}
+
+.gamepage .showgame .desc{
+  font-size: 20px;
+  position: absolute;
+  top: 0px;
+  left: 600px;
+  width: 400px;
+  text-align: justify;
+}
+
+.gamepage .showgame .preco{
+  font-size: 20px;
+  position: absolute;
+  top: 250px;
+  left: 600px;
+  width: 400px;
+  text-align: justify;
+}
+
+.gamepage .showgame .buybtn{
+  position: absolute;
+  top: 300px;
+  left: 600px;
+  width: 300px;
+  background-color: lime;
+  border-radius: 5px;
+  font-size: 30px;
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+}
+
+/* ESTILO PAGINA JOGO FIM */
+
+/* ESTILO PAGINA GENERO COMEÇO */
+
+.genderpage .genderdiv{
+  font-family: 'Roboto', sans-serif;
+  position:absolute;
+  top:65px;
+  bottom:0;
+  left:0;
+  right:0; 
+  margin: auto;
+  width: 80%;
+}
+
+.genderpage{
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+}
+
+.genderpage .innera .innerimg{
+  border-left: 40px;
+  width: 100;
+  border: solid cyan 1px;
+}
+
+.genderpage p{
+  color: white;
+  font-size: 50px;
+  font-weight: bolder;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.genderpage .innera{
+  font-size: 30px;
+  text-decoration: none;
+  border-left: 40px;
+  color: white;
+  vertical-align: center;
+}
+
+/* ESTILO PAGINA GENERO FIM */
+
+/* ESTILO PAGINA GENERO COMEÇO */
+
+.bibliopage{
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+}
+
+.bibliopage .item{
+  text-decoration: none;
+}
+
+.bibliopage .gamelogo{
+  width: 200px;
+  padding: 50px;
+}
+
+.bibliopage .gamename{
+  color: white;
+  border-left: 25px;
+  font-size: 40px;
+  font-weight: bolder;
+  position: relative;
+  top: 30px;
+  left: 50px;
+}
+
+.bibliopage .playbtn{
+font-size: 20px;
+border: none;
+outline: none;
+color: white;
+padding: 16px 10px;
+background-color: lime;
+margin-left: 50px;
+box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+border-radius: 5px;
+
+}
+
+
+/* ESTILO PAGINA GENERO FIM */
+
+
+.mainpage {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+}

@@ -47,6 +47,14 @@ function registerlanguages($db, $languages, $id){
         $db->prepare($sql)->execute([$id, $lang]);}
 }
 
+function registergender($db, $genders, $id){
+    $sql = 'INSERT INTO public."generosJogo"("idJogo", "idGenero")
+    values (?, ?)';
+    foreach ($genders as $gender){
+        $db->prepare($sql)->execute([$id, $gender]);}
+}
+
+
 
 $db = new DB();
 
@@ -55,11 +63,13 @@ $id = generate_id($db);
 $preco = number_format($_POST['preco'], 2);
 $preco = floatval($preco);
 $db->prepare($sql)->execute([$id, $_POST['nome'],$_POST['faixaetaria'], 
-$_POST['desc'], gmdate(" Y-M-d"), $preco, get_files_path($id, $path) ,$_POST["link"]]);
+$_POST['desc'], gmdate("Y-M-d"), $preco, get_files_path($id, $path) ,$_POST["link"]]);
 
 write_files($_FILES, get_files_path($id, $path));
 
 registerlanguages($db, $_POST['idiomas'], $id);
+
+registergender($db, $_POST['generos'], $id);
 
 
 $db = null;

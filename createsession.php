@@ -1,6 +1,5 @@
 <?php
 require './db.php';
-require_once './check.php';
 require_once './getuserdata.php';
 
 

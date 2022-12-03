@@ -4,7 +4,11 @@ require_once 'db.php';
 $db = new DB();
 $stmt = $db->prepare("SELECT * FROM public.idioma");
 $stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$languages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt = $db->prepare("SELECT * FROM public.genero");
+$stmt->execute();
+$gender = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $db = null;
 ?>
@@ -51,8 +55,13 @@ $db = null;
         <input name="carrousel3" id="carrousel3" type="file" accept="image/*"> <br>
         LINGUAS <br>
         <select multiple name="idiomas[]" id="idiomas">
-            <?php foreach ($rows as $row){?>
+            <?php foreach ($languages as $row){?>
                 <option value="<?php echo $row["abreviacao"]?>"><?php echo ($row["abreviacao"] . ", $row[idioma]");?></option>    
+            <?php }?>
+        </select> <br>
+        <select multiple name="generos[]" id="generos">
+            <?php foreach ($gender as $row){?>
+                <option value="<?php echo $row["id"]?>"><?php echo ($row["nomeGenero"]);?></option>    
             <?php }?>
         </select> <br>
         <button type="submit">REGISTRAR</button>

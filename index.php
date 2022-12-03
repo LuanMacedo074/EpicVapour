@@ -14,7 +14,7 @@ require 'checksession.php'; ?>
     <link rel="stylesheet" href="./style/style.css">
     <script src="js/jquery-3.6.0.min.js"></script>
 </head>
-<body>
+<body class="mainpage">
     <?php require 'navbar.php';?>
 </body>
 </html>
