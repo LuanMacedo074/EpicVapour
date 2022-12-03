@@ -33,7 +33,7 @@
             $stmt->execute([$game["idJogo"]]);
             $actualgame = $stmt->fetchAll(PDO::FETCH_ASSOC);  
             ?>
-            <a class="innera" href="http://localhost/epicvapour/application.php?id=<?php echo $actualgame[0]['id']?>">
+            <a class="innera" href="./application.php?id=<?php echo $actualgame[0]['id']?>">
             <img class="innerimg" src="<?php echo $actualgame[0]['path'] . "/gameicon.png"?>"><?php echo $actualgame[0]['nome']?>
             </a> <br>
         <?php }?>
