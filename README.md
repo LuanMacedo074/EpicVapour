@@ -20,7 +20,7 @@
 <style>
 .coluna{
   float: left;
-  width: 33.33%;
+  width: 50%;
 .row::after {
   content: "";
   clear: both;
