@@ -5,28 +5,7 @@
 <h4 align="center"> 
 	🚧  EpicVapour 💨 Em construção...  🚧
 </h4>
-<!-- <img alt="license" src=""> -->
-<!-- <img alt="if" src=""> -->
-
-<div class="row">
-  <div class="coluna">
-    <img src="https://img.shields.io/badge/license-GPL%20v3.0-green" alt="license" style="width:100%">
-  </div>
-  <div class="coluna">
-    <img src="https://img.shields.io/badge/IFBA-EpicVapour-red" alt="if" style="width:100%">
-  </div>
-  </div>
-
-<style>
-.coluna{
-  float: left;
-  width: 50%;
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-</style>
+<img alt="license" src="https://img.shields.io/badge/license-GPL%20v3.0-green">
 
 
 
